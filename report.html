@@ -13304,7 +13304,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>Spam email classifier or any text classification models.</li>
 <li>Easy to implement and it doesn’t require large training data.</li>
 <li>Assumes independence of the features, so it preforms poorly if there are many dependencies across the features.</li>
-<li>It's easy to implement.</li>
+<li>The features don't seem to be dependent on each other in this dataset so it could make a good prediction.</li>
 </ul>
 <p>References: 
 <br><a href="https://www.quora.com/What-are-the-advantages-of-using-a-naive-Bayes-for-classification">What are the advantages of using a naive Bayes for classification?</a>
@@ -13319,7 +13319,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <p>References:
 <br><a href="https://data-flair.training/blogs/applications-of-svm/">Applications of SVM</a>
 <br><a href="https://www.kdnuggets.com/2016/07/support-vector-machines-simple-explanation.html">Support Vector Machines: A Simple Explanation</a></p>
-<p><strong>Ensemble Methods (Bagging, <em>AdaBoost</em>, Random Forest, Gradient Boosting)</strong></p>
+<p><strong>AdaBoost</strong></p>
 <ul>
 <li>Face recognition systems.</li>
 <li>Easy to implement, accurate and doesn’t usually overfit.</li>
@@ -13449,7 +13449,7 @@ In the code block below, you will need to implement the following:</p>
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the three supervised learning models from sklearn</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
-<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+    <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
 
 <span class="c1"># TODO: Initialize the three models</span>
@@ -14289,11 +14289,12 @@ GaussianNB has very low training and prediction times, but compared to the other
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> 
-<br>Adaboost is a type of ensemble classifiers which are classifiers made up of combining the outputs of multiple classifiers. The algorithm is trained by combining weak learners to make a strong learner. Initial weights are given to each instance in the training set and in each iteration, a weight is added to the points that were misclassified and the algorithm focuses on correctly classifying those heavey weighted points. Adaboost predicts by calculating the weighted average of the weak classifiers.</p>
+<br>Adaboost is a type of ensemble classifiers which are classifiers made up of combining the outputs of multiple classifiers. The algorithm is trained by combining weak learners to make a strong learner. A weak learner is a classifier or a predictor that performs poorly but better than chance which means that it always has an an error rate that is less than 1/2. Initial weights are given to each instance in the training set and in each iteration, a weight is added to the points that were misclassified and the algorithm focuses on correctly classifying those heavey weighted points. The prediction is the combination of the weighted majority vote (or sum) of the predictions from all of the weak classifiers.</p>
 <p>Resources:
 <br><a href="http://rob.schapire.net/papers/explaining-adaboost.pdf">Explaining Adaboost</a>
 <br><a href="https://medium.com/machine-learning-101/https-medium-com-savanpatel-chapter-6-adaboost-classifier-b945f330af06">Chapter 6: Adaboost Classifier</a>
-<br> <a href="https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/">Boosting and AdaBoost for Machine Learning</a></p>
+<br> <a href="https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/">Boosting and AdaBoost for Machine Learning</a>
+<br> <a href="http://scikit-learn.org/stable/modules/ensemble.html#adaboost">Ensemble methods</a></p>
 
 </div>
 </div>
